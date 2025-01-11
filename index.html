@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منبر الشيخ عبد الحميد بوطاعة</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg'); /* هنا تحدد مسار الصورة */
+            background-size: cover; /* تضمن أن الصورة تغطي الصفحة بالكامل */
+            background-attachment: fixed; /* تثبيت الصورة */
+            background-position: center; /* تحديد موضع الصورة في المنتصف */
+            background-repeat: no-repeat; /* تمنع تكرار الصورة */
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll; /* تغيير المرفق لتناسب الجوال */
+            }
+        }
+
+        header {
+            background: rgba(44, 62, 80, 0.8); /* خلفية شفافة داكنة */
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Diwani Letter', cursive;
+            font-size: 2.5rem; /* تقليل حجم الخط */
+            color: #ffffff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5); /* ظلال مشعة */
+            background: linear-gradient(to right, #f39c12, #e74c3c); /* تدرج لوني جذاب */
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #f1c40f;
+            margin-top: 15px;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8);
+            }
+            100% {
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .search-bar {
+            display: flex;
+            flex-wrap: wrap; /* يسمح بتكديس العناصر على الأجهزة الصغيرة */
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7); /* شفافية خفيفة مع خلفية بيضاء */
+        }
+
+        .search-bar input {
+            flex: 1; /* يسمح للإدخال بالتمدد ليشغل العرض الكامل */
+            padding: 8px;
+            font-size: 1rem;
+            margin-bottom: 10px; /* يضيف مساحة بين الإدخالات على الجوال */
+            border: 2px solid #f1c40f;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .search-bar button:hover {
+            background-color: #6610f2;
+        }
+
+        .info-icon {
+            margin-left: 10px;
+        }
+
+        .info-icon button {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .info-icon button:hover {
+            background-color: #6610f2;
+        }
+
+        .category-container {
+            display: flex;
+            flex-wrap: wrap; /* يسمح بتكديس العناصر على الأجهزة الصغيرة */
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .category-column {
+            width: 100%; /* يجعل العرض 100% على الجوال */
+            margin-bottom: 10px; /* يضيف مساحة بين الأعمدة على الجوال */
+        }
+
+        @media (min-width: 768px) {
+            .category-column {
+                width: 48%; /* يعيد العرض إلى 48% على الشاشات الأكبر */
+            }
+        }
+
+        .category-item {
+            background: linear-gradient(to bottom, #e9f7fe, #2c3e50);
+            border: 2px solid #0d6efd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            margin: 10px 0;
+        }
+
+        .category-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-item button {
+            font-size: 1rem; /* تقليل حجم الخط للأزرار */
+            padding: 10px; /* تقليل الحشوة داخل الأزرار */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .no-content {
+            font-size: 1.5rem;
+            color: #dc3545;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #no-content-message {
+            display: none;
+            font-size: 1.5rem;
+            color: #dc3545;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* تغيير محاذاة عنوان "أحدث المحتويات" */
+        .latest-content-title {
+            text-align: right;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            color: white; /* تغيير اللون إلى الأبيض */
+        }
+
+        .latest-content-message {
+            color: white; /* تغيير اللون إلى الأبيض */
+        }
+
+        .latest-content p {
+            color: white; /* تغيير لون النص إلى الأبيض */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>منبر الشيخ عبد الحميد بوطاعة</h1>
+        <p>حفظه الله ورعاه</p>
+    </header>
+
+    <div class="container search-bar">
+        <form class="search-bar d-flex" onsubmit="handleSearch(event)">
+            <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
+            <button class="btn" type="submit">بحث</button>
+        </form>
+        <!-- زر معلومات -->
+        <div class="info-icon">
+            <button class="btn" onclick="redirectTo('info.html')">معلومات</button>
+        </div>
+    </div>
+
+    <div class="container category-container">
+        <div class="category-column">
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس ومواعظ</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
+            </div>
+        </div>
+        <div class="category-column">
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
+            </div>
+            <div class="category-item">
+                <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- محاذاة العنوان إلى اليمين -->
+    <div class="container">
+        <h2 class="latest-content-title">أحدث المحتويات</h2>
+        <div class="latest-content">
+            <audio controls>
+                <source src="https://github.com/ghanirbh34/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac" type="audio/aac">
+                لا يدعم متصفحك عنصر الصوت.
+            </audio>
+            <p>خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023</p>
+        </div>
+    </div>
+
+    <div id="no-content-message" class="no-content">
+        🚫 لا يوجد محتوى لعرضه حالياً.
+    </div>
+
+    <footer>
+        <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function handleSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById('search-input').value;
+            if (query.trim() === '') {
+                document.getElementById('no-content-message').style.display = 'block';
+            } else {
+                document.getElementById('no-content-message').style.display = 'none';
+                alert(`تم البحث عن: ${query}`);
+            }
+        }
+
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+        // دالة لإضافة المحتوى تلقائيًا
+        function addLatestContent() {
+            const latestContentDiv = document.getElementById('latest-content');
+            const audioElement = document.createElement('audio');
+            audioElement.controls = true;
+            const sourceElement = document.createElement('source');
+            sourceElement.src = "https://github.com/ghanirbh34/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac";
+            sourceElement.type = "audio/aac";
+            audioElement.appendChild(sourceElement);
+            const description = document.createElement('p');
+            description.textContent = "خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023";
+            latestContentDiv.appendChild(audioElement);
+            latestContentDiv.appendChild(description);
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+        window.onload = addLatestContent;
+    </script>
+</body>
+</html>
