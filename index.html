@@ -15,7 +15,6 @@
             margin: 0;
             padding: 0;
         }
-        
 
         header {
             background: rgba(44, 62, 80, 0.8); /* خلفية شفافة داكنة */
@@ -120,8 +119,18 @@
         }
 
         .category-item button {
+            background-color: #8B4513; /* لون بني */
+            color: white;
             font-size: 1rem; /* تقليل حجم الخط للأزرار */
             padding: 10px; /* تقليل الحشوة داخل الأزرار */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* تأثير مصقول */
+            transition: background-color 0.3s ease;
+        }
+
+        .category-item button:hover {
+            background-color: #A0522D; /* لون بني أغمق عند التحويم */
         }
 
         footer {
