@@ -271,27 +271,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // محتوى تجريبي للبحث
-        const content = [
-            { title: "فتاوى", url: "fatwa.html" },
-            { title: "دروس ومواعظ", url: "lessons.html" },
-            { title: "خطب الجمعة", url: "friday-sermons.html" },
-            { title: "صوتيات", url: "audios.html" },
-            { title: "مرئيات", url: "videos.html" },
-            { title: "استفسارتكم", url: "messages.html" }
-        ];
-
-        function handleSearch(event) {
+        async function handleSearch(event) {
             event.preventDefault();
             const query = document.getElementById('search-input').value.toLowerCase();
             if (query.trim() === '') {
                 alert('يرجى إدخال نص للبحث!');
             } else {
-                const result = content.find(item => item.title.toLowerCase().includes(query));
-                if (result) {
-                    window.location.href = result.url;
-                } else {
-                    alert('لا يوجد نتائج للبحث');
+                try {
+                    const response = await fetch(`/search?query=${query}`);
+                    const data = await response.json();
+                    if (response.ok) {
+                        window.location.href = data.url;
+                    } else {
+                        alert(data.error);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('حدث خطأ أثناء البحث.');
                 }
             }
         }
@@ -314,3 +310,4 @@
     </script>
 </body>
 </html>
+
