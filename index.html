@@ -35,33 +35,10 @@
             overflow: hidden;
         }
 
-        header h1 {
-            font-family: 'Diwani Letter', cursive;
-            font-size: 2.5rem; /* تقليل حجم الخط */
-            color: #ffffff;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5); /* ظلال مشعة */
-            background: linear-gradient(to right, #f39c12, #e74c3c); /* تدرج لوني جذاب */
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            color: #f1c40f;
-            margin-top: 15px;
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5);
-            }
-            50% {
-                text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8);
-            }
-            100% {
-                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5);
-            }
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         .search-bar {
@@ -197,8 +174,7 @@
 <body>
 
     <header>
-        <h1>منبر الشيخ عبد الحميد بوطاعة</h1>
-        <p>حفظه الله ورعاه</p>
+        <img src="https://github.com/ghanirbh34/manbar-sheikh-abd_alhamid/raw/main/img_1736625618482.png" alt="منبر الشيخ عبد الحميد بوطاعة">
     </header>
 
     <div class="container search-bar">
