@@ -1,4 +1,5 @@
 import json
+import sys
 
 # محتوى تجريبي للبحث
 content = [
@@ -19,5 +20,5 @@ def search(query):
         return json.dumps({"error": "لا يوجد نتائج للبحث"})
 
 if __name__ == '__main__':
-    query = input("أدخل نص البحث: ")
+    query = sys.argv[1]
     print(search(query))
