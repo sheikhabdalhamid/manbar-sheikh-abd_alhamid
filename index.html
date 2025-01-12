@@ -128,31 +128,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* تأثير مصقول */
             position: relative;
             overflow: hidden;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .category-item button:hover {
             background-color: #A0522D; /* لون بني أغمق عند التحويم */
-        }
-
-        .category-item button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.2);
-            animation: shine 2s infinite;
-        }
-
-        @keyframes shine {
-            0% {
-                transform: rotate(0deg) translateX(-50%);
-            }
-            100% {
-                transform: rotate(360deg) translateX(-50%);
-            }
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5); /* تأثير لمعان */
         }
 
         footer {
