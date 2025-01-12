@@ -271,25 +271,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        async function handleSearch(event) {
+        // محتوى تجريبي للبحث
+        const content = [
+            { title: "فتاوى", url: "fatwa.html", type: "article" },
+            { title: "دروس ومواعظ", url: "lessons.html", type: "article" },
+            { title: "خطب الجمعة", url: "friday-sermons.html", type: "article" },
+            { title: "صوتيات", url: "audios.html", type: "audio" },
+            { title: "مرئيات", url: "videos.html", type: "video" },
+            { title: "استفسارتكم", url: "messages.html", type: "article" }
+        ];
+
+        function handleSearch(event) {
             event.preventDefault();
             const query = document.getElementById('search-input').value.toLowerCase();
             if (query.trim() === '') {
                 alert('يرجى إدخال نص للبحث!');
             } else {
-                try {
-                    const response = await fetch(`/search?query=${query}`);
-                    const data = await response.json();
-                    if (response.ok) {
-                        window.location.href = data.url;
-                    } else {
-                        alert(data.error);
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('حدث خطأ أثناء البحث.');
+                const results = content.filter(item => item.title.toLowerCase().includes(query));
+                if (results.length > 0) {
+                    displayResults(results);
+                } else {
+                    alert('لا يوجد نتائج للبحث');
                 }
             }
+        }
+
+        function displayResults(results) {
+            const resultsContainer = document.createElement('div');
+            resultsContainer.classList.add('search-results');
+            resultsContainer.style.marginTop = '20px';
+            resultsContainer.style.textAlign = 'center';
+
+            results.forEach(item => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+                resultItem.style.margin = '10px';
+                resultItem.style.padding = '10px';
+                resultItem.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                resultItem.style.borderRadius = '10px';
+                resultItem.style.color = '#fff';
+
+                const title = document.createElement('h3');
+                title.textContent = item.title;
+                resultItem.appendChild(title);
+
+                const link = document.createElement('a');
+                link.href = item.url;
+                link.textContent = 'اذهب إلى الصفحة';
+                link.style.color = '#00796b';
+                link.style.textDecoration = 'none';
+                link.style.marginTop = '10px';
+                link.style.display = 'inline-block';
+                link.style.padding = '5px 10px';
+                link.style.borderRadius = '5px';
+                link.style.backgroundColor = '#004d40';
+                link.style.transition = 'background-color 0.3s ease';
+
+                link.addEventListener('mouseover', () => {
+                    link.style.backgroundColor = '#00796b';
+                });
+
+                link.addEventListener('mouseout', () => {
+                    link.style.backgroundColor = '#004d40';
+                });
+
+                resultItem.appendChild(link);
+                resultsContainer.appendChild(resultItem);
+            });
+
+            document.body.appendChild(resultsContainer);
         }
 
         function redirectTo(url) {
