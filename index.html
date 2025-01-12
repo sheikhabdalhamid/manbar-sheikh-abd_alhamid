@@ -202,6 +202,34 @@
         .login-container button:hover {
             background-color: #00796b;
         }
+
+        .search-results {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result-item {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .result-item a {
+            color: #00796b;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #004d40;
+            transition: background-color 0.3s ease;
+        }
+
+        .result-item a:hover {
+            background-color: #00796b;
+        }
     </style>
 </head>
 <body>
@@ -222,6 +250,8 @@
             <button class="btn" type="submit">بحث</button>
         </form>
     </div>
+
+    <div class="container search-results" id="search-results"></div>
 
     <div class="container login-container" id="login">
         <h2>تسجيل الدخول</h2>
@@ -284,32 +314,31 @@
         function handleSearch(event) {
             event.preventDefault();
             const query = document.getElementById('search-input').value.toLowerCase();
+            const resultsContainer = document.getElementById('search-results');
+
+            // إذا كان مربع البحث فارغاً
             if (query.trim() === '') {
+                resultsContainer.innerHTML = '';
                 alert('يرجى إدخال نص للبحث!');
             } else {
                 const results = content.filter(item => item.title.toLowerCase().includes(query));
+                
+                // إذا تم العثور على نتائج
                 if (results.length > 0) {
                     displayResults(results);
                 } else {
-                    alert('لا يوجد نتائج للبحث');
+                    resultsContainer.innerHTML = '<p>لا يوجد نتائج للبحث.</p>';
                 }
             }
         }
 
         function displayResults(results) {
-            const resultsContainer = document.createElement('div');
-            resultsContainer.classList.add('search-results');
-            resultsContainer.style.marginTop = '20px';
-            resultsContainer.style.textAlign = 'center';
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = ''; // مسح النتائج السابقة
 
             results.forEach(item => {
                 const resultItem = document.createElement('div');
                 resultItem.classList.add('result-item');
-                resultItem.style.margin = '10px';
-                resultItem.style.padding = '10px';
-                resultItem.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-                resultItem.style.borderRadius = '10px';
-                resultItem.style.color = '#fff';
 
                 const title = document.createElement('h3');
                 title.textContent = item.title;
@@ -318,28 +347,10 @@
                 const link = document.createElement('a');
                 link.href = item.url;
                 link.textContent = 'اذهب إلى الصفحة';
-                link.style.color = '#00796b';
-                link.style.textDecoration = 'none';
-                link.style.marginTop = '10px';
-                link.style.display = 'inline-block';
-                link.style.padding = '5px 10px';
-                link.style.borderRadius = '5px';
-                link.style.backgroundColor = '#004d40';
-                link.style.transition = 'background-color 0.3s ease';
-
-                link.addEventListener('mouseover', () => {
-                    link.style.backgroundColor = '#00796b';
-                });
-
-                link.addEventListener('mouseout', () => {
-                    link.style.backgroundColor = '#004d40';
-                });
-
                 resultItem.appendChild(link);
+
                 resultsContainer.appendChild(resultItem);
             });
-
-            document.body.appendChild(resultsContainer);
         }
 
         function redirectTo(url) {
