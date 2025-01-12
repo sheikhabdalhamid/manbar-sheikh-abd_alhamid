@@ -287,7 +287,7 @@
             if (query.trim() === '') {
                 alert('يرجى إدخال نص للبحث!');
             } else {
-                const result = content.find(item => item.title.includes(query));
+                const result = content.find(item => item.title.toLowerCase().includes(query));
                 if (result) {
                     window.location.href = result.url;
                 } else {
