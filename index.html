@@ -6,21 +6,24 @@
     <title>منبر الشيخ عبد الحميد بوطاعة</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg'); /* هنا تحدد مسار الصورة */
-            background-size: cover; /* تضمن أن الصورة تغطي الصفحة بالكامل */
-            background-position: center; /* تحديد موضع الصورة في المنتصف */
+       body {
+            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg'); /* إضافة خلفية */
+            background-size: cover; /* تغطية كاملة */
+            background-position: center; /* موضع الصورة في المنتصف */
+            background-attachment: fixed; /* خلفية ثابتة */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        @media (max-width: 768px) {
-            body {
-                background-attachment: scroll; /* تغيير المرفق لتناسب الجوال */
-            }
+/* تحسين العرض على الشاشات الصغيرة (الجوال) */
+@media only screen and (max-width: 767px) {
+        body {
+            background-attachment: scroll; /* تعطيل الخلفية الثابتة على الجوال */
+            background-size: cover; /* الحفاظ على تغطية كاملة للخلفية */
         }
-
+        }
+  
         header {
             background: rgba(44, 62, 80, 0.8); /* خلفية شفافة داكنة */
             padding: 50px 30px;
