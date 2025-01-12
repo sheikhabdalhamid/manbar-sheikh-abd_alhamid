@@ -53,42 +53,6 @@
             transform: scale(1.1);
         }
 
-        .search-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 30px auto;
-            padding: 20px;
-            border: 2px solid #4caf50;
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.6);
-            max-width: 80%;
-        }
-
-        .search-bar input {
-            flex: 1;
-            padding: 10px;
-            font-size: 1rem;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .search-bar button {
-            background-color: #004d40;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .search-bar button:hover {
-            background-color: #00796b;
-        }
-
         .category-container {
             display: flex;
             flex-wrap: wrap;
@@ -230,6 +194,24 @@
         .result-item a:hover {
             background-color: #00796b;
         }
+
+        .filter-bar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 30px auto;
+        }
+
+        .filter-bar select {
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -244,11 +226,17 @@
         <img src="https://raw.githubusercontent.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/main/IMG_20250112_093515.png" alt="منبر الشيخ عبد الحميد بوطاعة">
     </header>
 
-    <div class="container search-bar">
-        <form class="search-bar d-flex" onsubmit="handleSearch(event)">
-            <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
-            <button class="btn" type="submit">بحث</button>
-        </form>
+    <div class="container filter-bar">
+        <h3>فلتر المحتوى حسب الفئة</h3>
+        <select id="category-filter" onchange="filterContent()">
+            <option value="">اختر فئة</option>
+            <option value="fatwa">فتاوى</option>
+            <option value="lessons">دروس ومواعظ</option>
+            <option value="friday-sermons">خطب الجمعة</option>
+            <option value="audios">صوتيات</option>
+            <option value="videos">مرئيات</option>
+            <option value="messages">استفسارتكم</option>
+        </select>
     </div>
 
     <div class="container search-results" id="search-results"></div>
@@ -301,40 +289,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // محتوى تجريبي للبحث
-        const content = [
-            { title: "فتاوى", url: "fatwa.html", type: "article" },
-            { title: "دروس ومواعظ", url: "lessons.html", type: "article" },
-            { title: "خطب الجمعة", url: "friday-sermons.html", type: "article" },
-            { title: "صوتيات", url: "audios.html", type: "audio" },
-            { title: "مرئيات", url: "videos.html", type: "video" },
-            { title: "استفسارتكم", url: "messages.html", type: "article" }
-        ];
-
-        function handleSearch(event) {
-            event.preventDefault();
-            const query = document.getElementById('search-input').value.toLowerCase();
+        function filterContent() {
+            const selectedCategory = document.getElementById('category-filter').value;
             const resultsContainer = document.getElementById('search-results');
 
-            // إذا كان مربع البحث فارغاً
-            if (query.trim() === '') {
-                resultsContainer.innerHTML = '';
-                alert('يرجى إدخال نص للبحث!');
+            const content = [
+                { title: "فتاوى", url: "fatwa.html", category: "fatwa" },
+                { title: "دروس ومواعظ", url: "lessons.html", category: "lessons" },
+                { title: "خطب الجمعة", url: "friday-sermons.html", category: "friday-sermons" },
+                { title: "صوتيات", url: "audios.html", category: "audios" },
+                { title: "مرئيات", url: "videos.html", category: "videos" },
+                { title: "استفسارتكم", url: "messages.html", category: "messages" }
+            ];
+
+            const filteredResults = content.filter(item => selectedCategory ? item.category === selectedCategory : true);
+
+            if (filteredResults.length > 0) {
+                displayResults(filteredResults);
             } else {
-                const results = content.filter(item => item.title.toLowerCase().includes(query));
-                
-                // إذا تم العثور على نتائج
-                if (results.length > 0) {
-                    displayResults(results);
-                } else {
-                    resultsContainer.innerHTML = '<p>لا يوجد نتائج للبحث.</p>';
-                }
+                resultsContainer.innerHTML = '<p>لا يوجد محتوى في هذه الفئة.</p>';
             }
         }
 
         function displayResults(results) {
             const resultsContainer = document.getElementById('search-results');
-            resultsContainer.innerHTML = ''; // مسح النتائج السابقة
+            resultsContainer.innerHTML = '';
 
             results.forEach(item => {
                 const resultItem = document.createElement('div');
