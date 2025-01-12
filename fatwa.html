@@ -3,97 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فتاوى الشيخ عبد الحميد بوطاعة</title>
+    <title>فتاوى</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg'); /* إضافة خلفية */
+            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* خلفية ثابتة */
-            font-family: 'Arial', sans-serif;
+            background-attachment: fixed;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
+            color: #fff;
         }
+
         header {
-            background: rgba(44, 62, 80, 0.7); /* خلفية داكنة مع شفافية */
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .navbar {
+            background-color: #004d40;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #00796b;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        .search-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px auto;
             padding: 20px;
-            text-align: center;
-            border: 3px solid #f1c40f;
-            border-radius: 10px;
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            max-width: 80%;
         }
-        header h1 {
-            font-family: 'Diwani Letter', cursive;
-            font-size: 3rem;
-            color: #ffffff;
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
         }
-        header p {
-            font-size: 1.2rem;
-            color: #ffffff;
-        }
-        .center-button {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .center-button button {
-            background-color: #0d6efd;
+
+        .search-bar button {
+            background-color: #004d40;
             color: white;
             padding: 10px 20px;
             border: none;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 10px;
+            transition: background-color 0.3s ease;
         }
-        .center-button button:hover {
-            background-color: #6610f2;
+
+        .search-bar button:hover {
+            background-color: #00796b;
         }
-        .fatwa-list {
-            text-align: center;
+
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 20px;
         }
-        .fatwa-list h2 {
-            background: rgba(44, 62, 80, 0.7); /* خلفية داكنة مع شفافية */
-            color: #ffffff;
-            padding: 10px;
+
+        .category-item {
+            background: rgba(0, 77, 64, 0.8);
+            border: 2px solid #009688;
             border-radius: 10px;
-            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s;
         }
-        .fatwa-list ul {
-            list-style-type: none;
-            padding: 0;
+
+        .category-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
-        .fatwa-list ul li {
-            margin: 10px 0;
-            color: #8B4513; /* اللون البني */
-            font-size: 1.2rem; /* تغيير حجم النص */
+
+        .category-item button {
+            background-color: #00796b;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
+
+        .category-item button:hover {
+            background-color: #004d40;
+        }
+
         footer {
-            background-color: #2c3e50;
+            background-color: #004d40;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .latest-content-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0;
+            color: #4caf50;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .latest-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 80%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .latest-content p {
+            color: #fff;
+        }
+
+        .no-content {
+            font-size: 1.5rem;
+            color: #f44336;
+            text-align: center;
             margin-top: 20px;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container h2 {
+            color: #4caf50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #00796b;
+        }
+
+        .search-results {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result-item {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .result-item h3 {
+            margin: 0;
+        }
+
+        .result-item a {
+            color: #00796b;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #004d40;
+            transition: background-color 0.3s ease;
+        }
+
+        .result-item a:hover {
+            background-color: #00796b;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>فتاوى الشيخ عبد الحميد بوطاعة</h1>
-        <p>حفظه الله ورعاه</p>
-    </header>
-
-    <div class="center-button">
-        <button class="btn" onclick="redirectTo('index.html')">الرئيسية</button>
+    <div class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="#login">تسجيل الدخول</a>
+        <a href="#goals">هدفنا</a>
+        <a href="#faq">إي سؤال جواب</a>
     </div>
 
-    <div class="fatwa-list">
-        <h2>قائمة الفتاوى</h2>
-        <ul>
-            <li>فتوى 1</li>
-            <li>فتوى 2</li>
-            <li>فتوى 3</li>
-        </ul>
+    <header>
+        <img src="https://raw.githubusercontent.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/main/IMG_20250112_093515.png" alt="منبر الشيخ عبد الحميد بوطاعة">
+    </header>
+
+    <div class="container search-bar">
+        <form class="search-bar d-flex" onsubmit="handleSearch(event)">
+            <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
+            <button class="btn" type="submit">بحث</button>
+        </form>
+    </div>
+
+    <div class="container login-container" id="login">
+        <h2>تسجيل الدخول</h2>
+        <form onsubmit="handleLogin(event)">
+            <input type="text" placeholder="اسم المستخدم" id="username" required>
+            <input type="password" placeholder="كلمة المرور" id="password" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </div>
+
+    <div class="container category-container">
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس ومواعظ</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="latest-content-title">أحدث المحتويات</h2>
+        <div class="latest-content">
+            <audio controls>
+                <source src="https://github.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac" type="audio/aac">
+                لا يدعم متصفحك عنصر الصوت.
+            </audio>
+            <p>خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023</p>
+        </div>
+    </div>
+
+    <div class="container search-results" id="search-results">
+        <!-- سيتم عرض نتائج البحث هنا -->
     </div>
 
     <footer>
@@ -101,9 +306,67 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <script>
+        // محتوى تجريبي للبحث
+        const content = [
+            { title: "فتاوى", url: "fatwa.html", type: "article" },
+            { title: "دروس ومواعظ", url: "lessons.html", type: "article" },
+            { title: "خطب الجمعة", url: "friday-sermons.html", type: "article" },
+            { title: "صوتيات", url: "audios.html", type: "audio" },
+            { title: "مرئيات", url: "videos.html", type: "video" },
+            { title: "استفسارتكم", url: "messages.html", type: "article" }
+        ];
+
+        async function handleSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById('search-input').value.toLowerCase();
+            if (query.trim() === '') {
+                alert('يرجى إدخال نص للبحث!');
+            } else {
+                const results = content.filter(item => item.title.toLowerCase().includes(query));
+                const resultsContainer = document.getElementById('search-results');
+                resultsContainer.innerHTML = ''; // إفراغ النتائج السابقة
+                if (results.length > 0) {
+                    displayResults(results, resultsContainer);
+                } else {
+                    resultsContainer.innerHTML = '<p class="no-content">لا يوجد نتائج للبحث</p>';
+                }
+            }
+        }
+
+        function displayResults(results, container) {
+            results.forEach(item => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+
+                const title = document.createElement('h3');
+                title.textContent = item.title;
+                resultItem.appendChild(title);
+
+                const link = document.createElement('a');
+                link.href = item.url;
+                link.textContent = 'اذهب إلى الصفحة';
+                resultItem.appendChild(link);
+
+                container.appendChild(resultItem);
+            });
+        }
+
         function redirectTo(url) {
             window.location.href = url;
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'password') {
+                alert('مرحبًا، تم تسجيل الدخول بنجاح!');
+            } else {
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة.');
+            }
         }
     </script>
 </body>
