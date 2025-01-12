@@ -6,7 +6,7 @@
     <title>منبر الشيخ عبد الحميد بوطاعة</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-       body {
+        body {
             background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg'); /* إضافة خلفية */
             background-size: cover; /* تغطية كاملة */
             background-position: center; /* موضع الصورة في المنتصف */
@@ -16,14 +16,14 @@
             padding: 0;
         }
 
-/* تحسين العرض على الشاشات الصغيرة (الجوال) */
-@media only screen and (max-width: 767px) {
-        body {
-            background-attachment: scroll; /* تعطيل الخلفية الثابتة على الجوال */
-            background-size: cover; /* الحفاظ على تغطية كاملة للخلفية */
+        /* تحسين العرض على الشاشات الصغيرة (الجوال) */
+        @media only screen and (max-width: 767px) {
+            body {
+                background-attachment: scroll; /* تعطيل الخلفية الثابتة على الجوال */
+                background-size: cover; /* الحفاظ على تغطية كاملة للخلفية */
+            }
         }
-        }
-  
+
         header {
             background: rgba(44, 62, 80, 0.8); /* خلفية شفافة داكنة */
             padding: 50px 30px;
@@ -35,33 +35,15 @@
             overflow: hidden;
         }
 
-        header h1 {
-            font-family: 'Diwani Letter', cursive;
-            font-size: 2.5rem; /* تقليل حجم الخط */
-            color: #ffffff;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5); /* ظلال مشعة */
-            background: linear-gradient(to right, #f39c12, #e74c3c); /* تدرج لوني جذاب */
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: glow 1.5s ease-in-out infinite alternate;
+        header img {
+            max-width: 100%;
+            height: auto;
         }
 
         header p {
             font-size: 1.3rem;
             color: #f1c40f;
             margin-top: 15px;
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5);
-            }
-            50% {
-                text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8);
-            }
-            100% {
-                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.5);
-            }
         }
 
         .search-bar {
@@ -197,7 +179,7 @@
 <body>
 
     <header>
-        <h1>منبر الشيخ عبد الحميد بوطاعة</h1>
+        <img src="https://github.com/ghanirbh34/manbar-sheikh-abd_alhamid/raw/main/img_1736625618482.png" alt="منبر الشيخ عبد الحميد بوطاعة">
         <p>حفظه الله ورعاه</p>
     </header>
 
