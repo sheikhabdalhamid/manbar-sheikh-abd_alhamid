@@ -7,179 +7,213 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg'); /* إضافة خلفية */
-            background-size: cover; /* تغطية كاملة */
-            background-position: center; /* موضع الصورة في المنتصف */
-            background-attachment: fixed; /* خلفية ثابتة */
-            font-family: 'Arial', sans-serif;
+            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
+            color: #fff;
         }
 
         header {
-            background: rgba(44, 62, 80, 0.8); /* خلفية شفافة داكنة */
-            padding: 50px 30px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px 20px;
             text-align: center;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            max-width: 90%;
         }
 
         header img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 15px;
+        }
+
+        .navbar {
+            background-color: #004d40;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #00796b;
+            border-radius: 5px;
+            transform: scale(1.1);
         }
 
         .search-bar {
             display: flex;
-            flex-wrap: wrap; /* يسمح بتكديس العناصر على الأجهزة الصغيرة */
+            flex-wrap: wrap;
             justify-content: space-between;
-            margin-top: 20px;
-            padding: 10px;
-            border: 2px solid #f1c40f;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.7); /* شفافية خفيفة مع خلفية بيضاء */
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            max-width: 80%;
         }
 
         .search-bar input {
-            flex: 1; /* يسمح للإدخال بالتمدد ليشغل العرض الكامل */
-            padding: 8px;
+            flex: 1;
+            padding: 10px;
             font-size: 1rem;
-            margin-bottom: 10px; /* يضيف مساحة بين الإدخالات على الجوال */
-            border: 2px solid #f1c40f;
+            margin-bottom: 10px;
+            border: none;
             border-radius: 5px;
         }
 
         .search-bar button {
-            background-color: #0d6efd;
+            background-color: #004d40;
             color: white;
-            padding: 8px 15px;
+            padding: 10px 20px;
             border: none;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 10px;
+            transition: background-color 0.3s ease;
         }
 
         .search-bar button:hover {
-            background-color: #6610f2;
-        }
-
-        .info-icon {
-            margin-left: 10px;
-        }
-
-        .info-icon button {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-        .info-icon button:hover {
-            background-color: #6610f2;
+            background-color: #00796b;
         }
 
         .category-container {
             display: flex;
-            flex-wrap: wrap; /* يسمح بتكديس العناصر على الأجهزة الصغيرة */
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 20px;
         }
 
-        .category-column {
-            width: 100%; /* يجعل العرض 100% على الجوال */
-            margin-bottom: 10px; /* يضيف مساحة بين الأعمدة على الجوال */
-        }
-
-        @media (min-width: 768px) {
-            .category-column {
-                width: 48%; /* يعيد العرض إلى 48% على الشاشات الأكبر */
-            }
-        }
-
         .category-item {
-            background: linear-gradient(to bottom, #e9f7fe, #2c3e50);
-            border: 2px solid #0d6efd;
+            background: rgba(0, 77, 64, 0.8);
+            border: 2px solid #009688;
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-            margin: 10px 0;
+            margin: 10px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s;
         }
 
         .category-item:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
         .category-item button {
-            background-color: #808000; /* لون أخضر زيتوني */
+            background-color: #00796b;
             color: white;
-            font-size: 1rem; /* تقليل حجم الخط للأزرار */
-            padding: 10px; /* تقليل الحشوة داخل الأزرار */
+            font-size: 1rem;
+            padding: 10px 20px;
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* تأثير مصقول */
-            position: relative;
-            overflow: hidden;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .category-item button:hover {
-            background-color: #6B8E23; /* لون أخضر زيتوني أغمق عند التحويم */
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5); /* تأثير لمعان */
+            background-color: #004d40;
         }
 
         footer {
-            background-color: #2c3e50;
+            background-color: #004d40;
             color: white;
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .latest-content-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0;
+            color: #4caf50;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .latest-content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 80%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .latest-content p {
+            color: #fff;
         }
 
         .no-content {
             font-size: 1.5rem;
-            color: #dc3545;
+            color: #f44336;
             text-align: center;
             margin-top: 20px;
         }
 
-        #no-content-message {
-            display: none;
-            font-size: 1.5rem;
-            color: #dc3545;
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container h2 {
+            color: #4caf50;
             text-align: center;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
-        /* تغيير محاذاة عنوان "أحدث المحتويات" */
-        .latest-content-title {
-            text-align: right;
-            font-size: 1.8rem;
-            margin-right: 20px;
-            color: white; /* تغيير اللون إلى الأبيض */
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
         }
 
-        .latest-content-message {
-            color: white; /* تغيير اللون إلى الأبيض */
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .latest-content p {
-            color: white; /* تغيير لون النص إلى الأبيض */
+        .login-container button:hover {
+            background-color: #00796b;
         }
     </style>
 </head>
 <body>
 
+    <div class="navbar">
+        <a href="#login">تسجيل الدخول</a>
+        <a href="#goals">هدفنا</a>
+        <a href="#faq">إي سؤال جواب</a>
+    </div>
+
     <header>
-        <img src="https://raw.githubusercontent.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/main/IMG_20250112_150120.png" alt="منبر الشيخ عبد الحميد بوطاعة">
+        <img src="https://raw.githubusercontent.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/main/IMG_20250112_093515.png" alt="منبر الشيخ عبد الحميد بوطاعة">
     </header>
 
     <div class="container search-bar">
@@ -187,38 +221,38 @@
             <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
             <button class="btn" type="submit">بحث</button>
         </form>
-        <!-- زر معلومات -->
-        <div class="info-icon">
-            <button class="btn" onclick="redirectTo('info.html')">معلومات</button>
-        </div>
+    </div>
+
+    <div class="container login-container" id="login">
+        <h2>تسجيل الدخول</h2>
+        <form onsubmit="handleLogin(event)">
+            <input type="text" placeholder="اسم المستخدم" id="username" required>
+            <input type="password" placeholder="كلمة المرور" id="password" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
     </div>
 
     <div class="container category-container">
-        <div class="category-column">
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس ومواعظ</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
-            </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
         </div>
-        <div class="category-column">
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
-            </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس ومواعظ</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
+        </div>
+        <div class="category-item">
+            <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
         </div>
     </div>
 
-    <!-- محاذاة العنوان إلى اليمين -->
     <div class="container">
         <h2 class="latest-content-title">أحدث المحتويات</h2>
         <div class="latest-content">
@@ -228,10 +262,6 @@
             </audio>
             <p>خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023</p>
         </div>
-    </div>
-
-    <div id="no-content-message" class="no-content">
-        🚫 لا يوجد محتوى لعرضه حالياً.
     </div>
 
     <footer>
@@ -245,10 +275,9 @@
             event.preventDefault();
             const query = document.getElementById('search-input').value;
             if (query.trim() === '') {
-                document.getElementById('no-content-message').style.display = 'block';
+                alert('يرجى إدخال نص للبحث!');
             } else {
-                document.getElementById('no-content-message').style.display = 'none';
-                alert(`تم البحث عن: ${query}`);
+                alert('نتائج البحث عن: ' + query);
             }
         }
 
@@ -256,23 +285,19 @@
             window.location.href = url;
         }
 
-        // دالة لإضافة المحتوى تلقائيًا
-        function addLatestContent() {
-            const latestContentDiv = document.getElementById('latest-content');
-            const audioElement = document.createElement('audio');
-            audioElement.controls = true;
-            const sourceElement = document.createElement('source');
-            sourceElement.src = "https://github.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac";
-            sourceElement.type = "audio/aac";
-            audioElement.appendChild(sourceElement);
-            const description = document.createElement('p');
-            description.textContent = "خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023";
-            latestContentDiv.appendChild(audioElement);
-            latestContentDiv.appendChild(description);
-        }
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-        // استدعاء الدالة عند تحميل الصفحة
-        window.onload = addLatestContent;
+            if (username === 'admin' && password === 'password') {
+                alert('مرحبًا، تم تسجيل الدخول بنجاح!');
+            } else {
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة.');
+            }
+        }
     </script>
 </body>
 </html>
+
+
