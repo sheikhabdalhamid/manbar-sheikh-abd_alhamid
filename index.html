@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="منبر الشيخ عبد الحميد بوطاعة - فتاوى، دروس، خطب، صوتيات، ومرئيات">
+    <meta name="keywords" content="شيخ عبد الحميد بوطاعة, فتاوى, دروس, خطب, صوتيات, مرئيات">
     <title>منبر الشيخ عبد الحميد بوطاعة</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,6 +18,10 @@
             margin: 0;
             padding: 0;
             color: #f8f9fa;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         header {
@@ -127,6 +133,16 @@
             width: 100%;
         }
 
+        .section {
+            background: rgba(0, 0, 0, 0.7);
+            color: #f8f9fa;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
         @media (max-width: 768px) {
             header {
                 padding: 20px;
@@ -156,14 +172,19 @@
 <body>
     <nav class="navbar">
         <a href="#goals">هدفنا</a>
-        <a href="#faq">إي سؤال جواب</a>
+        <a href="#faq-section">إي سؤال جواب</a>
     </nav>
 
     <header>
         <img src="https://raw.githubusercontent.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/main/IMG_20250112_093515.png" alt="منبر الشيخ عبد الحميد بوطاعة">
     </header>
 
-    <div id="goals" class="category-container">
+    <div id="goals" class="section">
+        <h2>حول المنصة</h2>
+        <p>هنا يمكنك وضع نص يشرح عن المنصة وأهدافها.</p>
+    </div>
+
+    <div class="category-container">
         <div class="category-item">
             <button onclick="redirectTo('fatwa.html')">فتاوى</button>
         </div>
@@ -182,6 +203,11 @@
         <div class="category-item">
             <button onclick="redirectTo('messages.html')">استفسارتكم</button>
         </div>
+    </div>
+
+    <div id="faq-section" class="section">
+        <h2>إي سؤال جواب</h2>
+        <p>هنا يمكنك وضع الأسئلة الشائعة وإجاباتها.</p>
     </div>
 
     <div id="faq" class="latest-content">
