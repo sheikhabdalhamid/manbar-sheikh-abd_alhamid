@@ -15,6 +15,7 @@
             font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
+            color: #fff;
         }
 
         header {
@@ -22,7 +23,7 @@
             padding: 30px;
             text-align: center;
             border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             margin: 20px auto;
             max-width: 90%;
         }
@@ -34,18 +35,19 @@
         }
 
         .navbar {
-            background-color: rgba(0, 123, 255, 0.8);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 123, 255, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
 
         .navbar a {
             color: white;
-            padding: 10px 15px;
+            padding: 10px 20px;
             text-decoration: none;
-            font-size: 1rem;
-            margin: 0 5px;
+            font-size: 1.1rem;
+            margin: 0 10px;
             transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
             border-radius: 5px;
         }
@@ -53,7 +55,7 @@
         .navbar a:hover {
             background-color: rgba(30, 144, 255, 0.9);
             transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+            box-shadow: 0 6px 15px rgba(30, 144, 255, 0.5);
         }
 
         .search-bar {
@@ -61,10 +63,11 @@
             justify-content: center;
             align-items: center;
             margin-top: 20px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
             border: 2px solid #f1c40f;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .search-bar input {
@@ -72,14 +75,14 @@
             padding: 10px;
             font-size: 1rem;
             border: 2px solid #f1c40f;
-            border-radius: 5px;
+            border-radius: 10px;
             margin-right: 10px;
         }
 
         .search-bar button {
-            background-color: rgba(0, 123, 255, 0.8);
+            background-color: rgba(0, 123, 255, 0.9);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 25px;
             border: none;
             font-size: 1rem;
             cursor: pointer;
@@ -89,7 +92,7 @@
 
         .search-bar button:hover {
             background-color: rgba(30, 144, 255, 0.9);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
         }
 
         .category-container {
@@ -97,57 +100,63 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
-            gap: 20px;
+            gap: 25px;
         }
 
         .category-item {
             background: rgba(0, 123, 255, 0.1);
             border: 2px solid rgba(0, 123, 255, 0.8);
-            border-radius: 10px;
-            padding: 15px;
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             width: calc(100% - 40px);
             max-width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
         }
 
         .category-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
         }
 
         .category-item button {
-            background-color: rgba(0, 123, 255, 0.8);
+            background-color: rgba(0, 123, 255, 0.9);
             color: white;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 10px;
-            transition: background-color 0.3s;
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         .category-item button:hover {
             background-color: rgba(30, 144, 255, 0.9);
+            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.5);
         }
 
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .latest-content {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 20px;
+            padding: 25px;
             margin: 20px auto;
-            border-radius: 10px;
+            border-radius: 15px;
             max-width: 90%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .latest-content p {
-            margin: 10px 0;
+            margin: 15px 0;
         }
 
         .latest-content audio {
