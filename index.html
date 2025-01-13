@@ -45,7 +45,6 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
         }
 
         .navbar a {
@@ -64,32 +63,6 @@
             background-color: rgba(241, 196, 15, 0.2);
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(241, 196, 15, 0.5);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.8);
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 10px;
-            padding: 10px;
-            top: 100%;
-            right: 0;
-        }
-
-        .dropdown-content a {
-            color: #f1c40f;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: right;
-            transition: background-color 0.3s;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(241, 196, 15, 0.2);
         }
 
         .category-container {
@@ -161,6 +134,17 @@
             width: 100%;
         }
 
+        .hidden-section {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            color: #f8f9fa;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
         @media (max-width: 768px) {
             header {
                 padding: 20px;
@@ -189,23 +173,23 @@
 </head>
 <body>
     <nav class="navbar">
-        <a onclick="toggleDropdown('goalsDropdown')">هدفنا</a>
-        <a onclick="toggleDropdown('faqDropdown')">إي سؤال جواب</a>
-        <div id="goalsDropdown" class="dropdown-content">
-            <a href="#">حول المنصة</a>
-            <a href="#">أهدافنا</a>
-            <a href="#">رؤيتنا</a>
-        </div>
-        <div id="faqDropdown" class="dropdown-content">
-            <a href="#">سؤال 1</a>
-            <a href="#">سؤال 2</a>
-            <a href="#">سؤال 3</a>
-        </div>
+        <a onclick="toggleSection('goalsSection')">هدفنا</a>
+        <a onclick="toggleSection('faqSection')">إي سؤال جواب</a>
     </nav>
 
     <header>
         <img src="https://raw.githubusercontent.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/main/IMG_20250112_093515.png" alt="منبر الشيخ عبد الحميد بوطاعة">
     </header>
+
+    <div id="goalsSection" class="hidden-section">
+        <h2>حول المنصة</h2>
+        <p>هنا يمكنك وضع نص يشرح عن المنصة وأهدافها.</p>
+    </div>
+
+    <div id="faqSection" class="hidden-section">
+        <h2>إي سؤال جواب</h2>
+        <p>هنا يمكنك وضع الأسئلة الشائعة وإجاباتها.</p>
+    </div>
 
     <div class="category-container">
         <div class="category-item">
@@ -246,24 +230,10 @@
             window.location.href = url;
         }
 
-        function toggleDropdown(dropdownId) {
-            var dropdown = document.getElementById(dropdownId);
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.navbar a')) {
-                var dropdowns = document.getElementsByClassName('dropdown-content');
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.style.display === 'block') {
-                        openDropdown.style.display = 'none';
-                    }
-                }
-            }
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.style.display = section.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
 </html>
-
