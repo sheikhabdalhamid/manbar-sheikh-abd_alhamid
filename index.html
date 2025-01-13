@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منبر الشيخ عبد الحميد بوطاعة</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg'); /* إضافة خلفية */
-            background-size: cover; /* تغطية كاملة */
-            background-position: center; /* موضع الصورة في المنتصف */
-            background-attachment: fixed; /* خلفية ثابتة */
-            font-family: 'Arial', sans-serif;
+            background-image: url('images/472922839_1271370897478849_1763613015558003863_n.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: rgba(44, 62, 80, 0.8); /* خلفية شفافة داكنة */
-            padding: 50px 30px;
+            background: rgba(44, 62, 80, 0.8);
+            padding: 30px;
             text-align: center;
             border-radius: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
+            margin: 20px auto;
+            max-width: 90%;
         }
 
         header img {
@@ -34,95 +34,67 @@
         }
 
         .navbar {
-            background-color: #808000; /* لون أخضر زيتوني */
+            background-color: #808000;
             padding: 10px;
-            text-align: center;
         }
 
         .navbar a {
             color: white;
-            padding: 14px 20px;
+            padding: 10px 15px;
             text-decoration: none;
-            text-align: center;
-            display: inline-block;
             font-size: 1rem;
-            margin: 0 10px;
-            transition: background-color 0.3s ease;
+            margin: 0 5px;
+            transition: transform 0.3s, background-color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: #6B8E23; /* لون أخضر زيتوني أغمق عند التحويم */
+            background-color: #6B8E23;
+            transform: scale(1.1);
             border-radius: 5px;
         }
 
         .search-bar {
             display: flex;
-            flex-wrap: wrap; /* يسمح بتكديس العناصر على الأجهزة الصغيرة */
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
             margin-top: 20px;
             padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
             border: 2px solid #f1c40f;
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.7); /* شفافية خفيفة مع خلفية بيضاء */
         }
 
         .search-bar input {
-            flex: 1; /* يسمح للإدخال بالتمدد ليشغل العرض الكامل */
-            padding: 8px;
+            flex: 1;
+            padding: 10px;
             font-size: 1rem;
-            margin-bottom: 10px; /* يضيف مساحة بين الإدخالات على الجوال */
             border: 2px solid #f1c40f;
             border-radius: 5px;
+            margin-right: 10px;
         }
 
         .search-bar button {
-            background-color: #808000; /* لون أخضر زيتوني */
+            background-color: #808000;
             color: white;
-            padding: 8px 15px;
+            padding: 10px 20px;
             border: none;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 10px;
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         .search-bar button:hover {
-            background-color: #6B8E23; /* لون أخضر زيتوني أغمق عند التحويم */
-        }
-
-        .info-icon {
-            margin-left: 10px;
-        }
-
-        .info-icon button {
-            background-color: #808000; /* لون أخضر زيتوني */
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-        .info-icon button:hover {
-            background-color: #6B8E23; /* لون أخضر زيتوني أغمق عند التحويم */
+            background-color: #6B8E23;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .category-container {
             display: flex;
-            flex-wrap: wrap; /* يسمح بتكديس العناصر على الأجهزة الصغيرة */
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 20px;
-        }
-
-        .category-column {
-            width: 100%; /* يجعل العرض 100% على الجوال */
-            margin-bottom: 10px; /* يضيف مساحة بين الأعمدة على الجوال */
-        }
-
-        @media (min-width: 768px) {
-            .category-column {
-                width: 48%; /* يعيد العرض إلى 48% على الشاشات الأكبر */
-            }
+            gap: 20px;
         }
 
         .category-item {
@@ -131,31 +103,27 @@
             border-radius: 10px;
             padding: 15px;
             text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-            margin: 10px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: calc(100% - 40px);
+            max-width: 300px;
         }
 
         .category-item:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .category-item button {
-            background-color: #808000; /* لون أخضر زيتوني */
+            background-color: #808000;
             color: white;
-            font-size: 1rem; /* تقليل حجم الخط للأزرار */
-            padding: 10px; /* تقليل الحشوة داخل الأزرار */
+            padding: 10px;
             border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* تأثير مصقول */
-            position: relative;
-            overflow: hidden;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s;
         }
 
         .category-item button:hover {
-            background-color: #6B8E23; /* لون أخضر زيتوني أغمق عند التحويم */
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5); /* تأثير لمعان */
+            background-color: #6B8E23;
         }
 
         footer {
@@ -166,156 +134,80 @@
             margin-top: 20px;
         }
 
-        .no-content {
-            font-size: 1.5rem;
-            color: #dc3545;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        #no-content-message {
-            display: none;
-            font-size: 1.5rem;
-            color: #dc3545;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* تغيير محاذاة عنوان "أحدث المحتويات" */
-        .latest-content-title {
-            text-align: right;
-            font-size: 1.8rem;
-            margin-right: 20px;
-            color: white; /* تغيير اللون إلى الأبيض */
-        }
-
-        .latest-content-message {
-            color: white; /* تغيير اللون إلى الأبيض */
+        .latest-content {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 90%;
         }
 
         .latest-content p {
-            color: white; /* تغيير لون النص إلى الأبيض */
+            margin: 10px 0;
+        }
+
+        .latest-content audio {
+            width: 100%;
         }
     </style>
 </head>
 <body>
-
-    <div class="navbar">
+    <nav class="navbar">
         <a href="#login">تسجيل الدخول</a>
         <a href="#goals">هدفنا</a>
         <a href="#faq">إي سؤال جواب</a>
-    </div>
+    </nav>
 
     <header>
         <img src="https://raw.githubusercontent.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/main/IMG_20250112_093515.png" alt="منبر الشيخ عبد الحميد بوطاعة">
     </header>
 
     <div class="container search-bar">
-        <form class="search-bar d-flex" onsubmit="handleSearch(event)">
-            <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input" aria-label="Search">
-            <button class="btn" type="submit">بحث</button>
-        </form>
-        <!-- زر معلومات -->
-        <div class="info-icon">
-            <button class="btn" onclick="redirectTo('info.html')">معلومات</button>
+        <input class="form-control" type="search" placeholder="ابحث هنا..." id="search-input">
+        <button class="btn">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+
+    <div class="category-container">
+        <div class="category-item">
+            <button onclick="redirectTo('fatwa.html')">فتاوى</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('lessons.html')">دروس ومواعظ</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('audios.html')">صوتيات</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('videos.html')">مرئيات</button>
+        </div>
+        <div class="category-item">
+            <button onclick="redirectTo('messages.html')">استفسارتكم</button>
         </div>
     </div>
 
-    <div class="container category-container">
-        <div class="category-column">
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('fatwa.html')">فتاوى</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('lessons.html')">دروس ومواعظ</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('friday-sermons.html')">خطب الجمعة</button>
-            </div>
-        </div>
-        <div class="category-column">
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('audios.html')">صوتيات</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('videos.html')">مرئيات</button>
-            </div>
-            <div class="category-item">
-                <button class="btn btn-primary w-100" onclick="redirectTo('messages.html')">استفسارتكم</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- محاذاة العنوان إلى اليمين -->
-    <div class="container">
-        <h2 class="latest-content-title">أحدث المحتويات</h2>
-        <div class="latest-content">
-            <audio controls>
-                <source src="https://github.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac" type="audio/aac">
-                لا يدعم متصفحك عنصر الصوت.
-            </audio>
-            <p>خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023</p>
-        </div>
-    </div>
-
-    <div id="no-content-message" class="no-content">
-        🚫 لا يوجد محتوى لعرضه حالياً.
+    <div class="latest-content">
+        <h2>أحدث المحتويات</h2>
+        <audio controls>
+            <source src="https://github.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac" type="audio/aac">
+            لا يدعم متصفحك عنصر الصوت.
+        </audio>
+        <p>خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023</p>
     </div>
 
     <footer>
         <p>&copy; 2025 منبر الشيخ عبد الحميد بوطاعة. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- أقسام الصفحة الرئيسية -->
-    <div id="login" class="section">
-        <h2>تسجيل الدخول</h2>
-        <p>هنا يمكنك تسجيل الدخول إلى حسابك.</p>
-    </div>
-
-    <div id="goals" class="section">
-        <h2>هدفنا</h2>
-        <p>هدفنا هو نشر المعرفة والفائدة للجميع.</p>
-    </div>
-
-    <div id="faq" class="section">
-        <h2>إي سؤال جواب</h2>
-        <p>إذا كان لديك أي سؤال، يمكنك العثور على الإجابة هنا.</p>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        function handleSearch(event) {
-            event.preventDefault();
-            const query = document.getElementById('search-input').value;
-            if (query.trim() === '') {
-                document.getElementById('no-content-message').style.display = 'block';
-            } else {
-                document.getElementById('no-content-message').style.display = 'none';
-            }
-        }
-
         function redirectTo(url) {
             window.location.href = url;
         }
-
-        // دالة لإضافة المحتوى تلقائيًا
-        function addLatestContent() {
-            const latestContentDiv = document.getElementById('latest-content');
-            const audioElement = document.createElement('audio');
-            audioElement.controls = true;
-            const sourceElement = document.createElement('source');
-            sourceElement.src = "https://github.com/sheikhabdalhamid/manbar-sheikh-abd_alhamid/raw/main/audio/%D8%AE%D8%B7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B5%D9%84%D8%A7%D8%A9%20%D9%84%D9%84%D8%B4%D9%8A%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%20%D8%A8%D9%88%D8%B7%D8%A7%D8%B9%D8%A9%2007-07-2023.aac";
-            sourceElement.type = "audio/aac";
-            audioElement.appendChild(sourceElement);
-            const description = document.createElement('p');
-            description.textContent = "خطبة الجمعة حول الصلاة للشيخ عبد الحميد بوطاعة 07-07-2023";
-            latestContentDiv.appendChild(audioElement);
-            latestContentDiv.appendChild(description);
-        }
-
-        // استدعاء الدالة عند تحميل الصفحة
-        window.onload = addLatestContent;
     </script>
 </body>
 </html>
