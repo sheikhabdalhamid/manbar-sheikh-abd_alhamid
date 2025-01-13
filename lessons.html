@@ -31,6 +31,18 @@
             font-size: 1.2rem;
             color: #ffffff;
         }
+        .nav-links {
+            margin: 20px 0;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
         .center-button {
             text-align: center;
             margin: 20px 0;
@@ -81,6 +93,12 @@
     <header>
         <h1>دروس ومواعظ الشيخ عبد الحميد بوطاعة</h1>
         <p>حفظه الله ورعاه</p>
+        <div class="nav-links">
+            <a href="#" onclick="redirectTo('index.html')">الرئيسية</a>
+            <a href="#" onclick="redirectTo('visual.html')">مرئية</a>
+            <a href="#" onclick="redirectTo('audio.html')">صوتية</a>
+            <a href="#" onclick="redirectTo('article.html')">مقالة</a>
+        </div>
     </header>
 
     <div class="center-button">
