@@ -1,35 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sheikhabdalhamid.github.io/index.html</loc>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/index.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sheikhabdalhamid.github.io/audios.html</loc>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/lessons.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sheikhabdalhamid.github.io/fatwa.html</loc>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/video%20D.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sheikhabdalhamid.github.io/friday-sermons.html</loc>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/article%20D.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sheikhabdalhamid.github.io/info.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sheikhabdalhamid.github.io/lessons.html</loc>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/audio%20D.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sheikhabdalhamid.github.io/messages.html</loc>
-    <priority>0.7</priority>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/article%20F.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sheikhabdalhamid.github.io/videos.html</loc>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/audio%20F.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/video%20F.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/fatwa.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/friday-sermons.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/audio%20K.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/article%20K.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/video%20K.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/audios.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/videos.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/messages.html</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
+
