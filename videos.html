@@ -31,21 +31,17 @@
             font-size: 1.2rem;
             color: #ffffff;
         }
-        .center-button {
-            text-align: center;
+        .nav-links {
             margin: 20px 0;
         }
-        .center-button button {
-            background-color: #0d6efd;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 10px;
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2rem;
         }
-        .center-button button:hover {
-            background-color: #6610f2;
+        .nav-links a:hover {
+            text-decoration: underline;
         }
         .video-list {
             text-align: center;
@@ -81,11 +77,10 @@
     <header>
         <h1>مرئيات الشيخ عبد الحميد بوطاعة</h1>
         <p>حفظه الله ورعاه</p>
+        <div class="nav-links">
+            <a href="#" onclick="redirectTo('index.html')">الرئيسية</a>
+        </div>
     </header>
-
-    <div class="center-button">
-        <button class="btn" onclick="redirectTo('index.html')">الرئيسية</button>
-    </div>
 
     <div class="video-list">
         <h2>قائمة المرئيات</h2>
