@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <link rel="canonical" href="https://sheikhabdalhamid.github.io/manbar-sheikh-abd_alhamid/index.html">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="منبر الشيخ عبد الحميد بوطاعة - فتاوى، دروس، خطب، صوتيات، ومرئيات">
@@ -72,17 +71,14 @@
             display: none;
             position: absolute;
             background-color: rgba(0, 0, 0, 0.8);
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 10px;
             padding: 10px;
             top: 100%;
             color: #fff;
-        }
-
-        .dropdown-content p {
-            margin: 10px 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 0; /* إزالة التدوير */
+            width: 200px; /* جعل العرض 200px */
+            height: 200px; /* جعل الارتفاع 200px */
         }
 
         #goalsDropdown {
@@ -207,7 +203,6 @@
                 <a href="https://www.facebook.com/profile.php?id=61572215181523">رابط الفيسبوك</a>
             </p>
         </div>
-
     </nav>
 
     <header>
@@ -258,13 +253,9 @@
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
-        // Close the dropdown if the user clicks outside of it
         window.onclick = function(event) {
             if (!event.target.matches('.navbar a')) {
-                var dropdowns = document.getElementsByClassName('dropdown-content');/*روابح عبد المؤمن*/
-/*روابح عبد الرحيم*/
-/*روابح عبد الرحمن*/
-/*روابح عبد الغني*/
+                var dropdowns = document.getElementsByClassName('dropdown-content');
                 for (var i = 0; i < dropdowns.length; i++) {
                     var openDropdown = dropdowns[i];
                     if (openDropdown.style.display === 'block') {
@@ -276,3 +267,4 @@
     </script>
 </body>
 </html>
+
